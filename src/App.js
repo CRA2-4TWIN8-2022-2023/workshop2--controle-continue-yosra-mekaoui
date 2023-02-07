@@ -2,6 +2,7 @@
 import './App.css';
 import ComposantClass from './components/ComposantClass';
 import ComposantFunct from './components/ComposantFunct';
+import Product from './components/Product';
 const option = (
   <ol>
     <li>Twin</li>
@@ -34,6 +35,7 @@ function App() {
    <div className="App">
     <ComposantClass></ComposantClass>
     <ComposantFunct/>
+    <Product/>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

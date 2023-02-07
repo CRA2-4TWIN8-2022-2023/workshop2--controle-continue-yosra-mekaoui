@@ -1,5 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
+import ComposantClass from './components/ComposantClass';
+import ComposantFunct from './components/ComposantFunct';
 const option = (
   <ol>
     <li>Twin</li>
@@ -30,6 +32,8 @@ var myStyle ={
 function App() {
   return (
    <div className="App">
+    <ComposantClass></ComposantClass>
+    <ComposantFunct/>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -44,7 +48,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-      Hello Yosra
+      {/* Hello Yosra
       {option}
       la valeur de x {x}
       la valeur de y {y}
@@ -58,7 +62,7 @@ function App() {
       <br>
       </br>
       {formatName(user)}
-      <h1 style = {myStyle}>Bonjour</h1>
+      <h1 style = {myStyle}>Bonjour</h1> */}
 
     </div>
   );

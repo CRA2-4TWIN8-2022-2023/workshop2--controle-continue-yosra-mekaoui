@@ -2,7 +2,7 @@
 import './App.css';
 import ComposantClass from './components/ComposantClass';
 import ComposantFunct from './components/ComposantFunct';
-import Product from './components/Product';
+import Products from './components/Products';
 const option = (
   <ol>
     <li>Twin</li>
@@ -35,7 +35,7 @@ function App() {
    <div className="App">
     <ComposantClass></ComposantClass>
     <ComposantFunct/>
-    <Product/>
+    <Products/>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -64,7 +64,9 @@ function App() {
       <br>
       </br>
       {formatName(user)}
-      <h1 style = {myStyle}>Bonjour</h1> */}
+      <h1 style = {myStyle}>Bonjour</h1> */
+      }
+      
 
     </div>
   );

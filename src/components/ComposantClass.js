@@ -1,11 +1,13 @@
 import { Component } from "react";
 import Button from 'react-bootstrap/Button';
 
+
 class ComposantClass extends Component {
     state = {
         monTexte: "Hello 4TWIN8",
         valeur: 0
     }
+    
     handleClick = () => {
         this.setState({
             valeur: this.state.valeur + 1

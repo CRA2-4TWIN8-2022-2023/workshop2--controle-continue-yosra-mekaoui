@@ -16,6 +16,7 @@ const Products = () => {
         setTimeout(() => setShowWelcomeMessage(true), 3000);
         setTimeout(() => setShowWelcomeMessage(false), 6000);
       }, []);
+      
   const productComponents = productsData.map((product) => (
     <Product
       key={product.id}

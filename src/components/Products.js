@@ -10,13 +10,14 @@ const Products = () => {
     const [showAlert, setShowAlert] = useState(false);
     const handleLike = () => {
         // Code pour ajouter un "J'aime" à un produit spécifique
+        //n'ai pas fonctionnel ???????
       };
        
       useEffect(() => {
         setTimeout(() => setShowWelcomeMessage(true), 3000);
         setTimeout(() => setShowWelcomeMessage(false), 6000);
       }, []);
-      
+
   const productComponents = productsData.map((product) => (
     <Product
       key={product.id}

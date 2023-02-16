@@ -32,7 +32,7 @@ class Products extends Component{
     // showAlert = () => {
     //     this.setState({showAlert : true}, () => setTimeout(() => {
     //         this.setState({showAlert : false });
-    //     }),2000)
+    //    }),2000)
 
     // };
     showAlert =() => {

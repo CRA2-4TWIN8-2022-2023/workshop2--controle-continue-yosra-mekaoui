@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import MyContext from './component/MyContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <MyContext.Provider value={{ username:"Yosra" , loggedIn: true}}>
     <App />
+    </MyContext.Provider>
   </React.StrictMode>
  // <p>Bonjour , c'est yosra</p>
 );

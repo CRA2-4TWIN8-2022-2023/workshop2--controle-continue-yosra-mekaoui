@@ -3,6 +3,7 @@ import './App.css';
 import ComposantClass from './components/ComposantClass';
 import ComposantFunct from './components/ComposantFunct';
 import Products from './components/Products';
+import FunctUseState from './component/hooks';
 const option = (
   <ol>
     <li>Twin</li>
@@ -34,8 +35,9 @@ var myStyle ={
 function App() {
   return (
  
+    <FunctUseState></FunctUseState>
     
-    <Products/>
+    //<Products/>
      /* { <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

@@ -33,11 +33,10 @@ var myStyle ={
 
 function App() {
   return (
-   <div className="App">
-    <ComposantClass></ComposantClass>
-    <ComposantFunct/>
+ 
+    
     <Products/>
-      {/* <header className="App-header">
+     /* { <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -50,8 +49,8 @@ function App() {
         >
           Learn React
         </a>
-      </header> */}
-      {/* Hello Yosra
+      </header> 
+      { Hello Yosra
       {option}
       la valeur de x {x}
       la valeur de y {y}
@@ -66,11 +65,11 @@ function App() {
       </br>
       {formatName(user)}
       <h1 style = {myStyle}>Bonjour</h1> */
+  );
       }
       
 
-    </div>
-  );
-}
+    
+  
 
 export default App;

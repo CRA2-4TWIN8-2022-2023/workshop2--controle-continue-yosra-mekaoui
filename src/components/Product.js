@@ -1,83 +1,53 @@
-/*import { Component } from "react";
+import React, { Component } from 'react';
+import { Button } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+
+
+
 class Product extends Component {
-    state = {
-        produts:[
-             {
-                "name": "PC Lenovo",
-                "price": "1400",
-                  "img": "product1.webp",
-                  "like":0,
-                  "quantity":10,
-                  "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page"
-             },
-             {
-                "name": "Mouse",
-                "price": "30",
-                "img": "product2.jpg",
-                "like":0,
-                "quantity":0,
-                "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page"
-              },
-              {
-                "name": "KeyBoard",
-                "price": "70",
-                "img": "product3.jpg",
-                "like":0,
-                "quantity":20,
-                "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page"
-              }
-        ]
-     
-      }
-    render() { 
-        return (<>
-        {this.state.produts.map((p, i) =><li key={i} >{p.name} -- {p.price}</li>)}
-        </>);
-    }
+  constructor(props){
+    super(props);
+    this.state = {
+    product : props.product,
+    
+  } 
+
+  }
+  addLike = () => {
+   this.setState((oldState) =>( {
+      product : {...oldState.product,like:oldState.product.like+1}
+   })
+   );
+  //  this.setState({product : {...this.state.product,like:this.state.like+1}});
+   console.log(this.state.product.like);
+
+  }
+  updateQuantity = (newQuantity) => {
+    this.setState((oldState) =>( {
+      product : {...oldState.product,quantity:newQuantity}
+   }))
+
+  }
+
+  render() { 
+    return (
+      <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={require("../assets/images/"+this.props.product.img)} />
+      <Card.Body >
+        <Card.Title>Name : {this.props.product.name}</Card.Title>
+        <Card.Subtitle> Description :  {this.props.product.description} </Card.Subtitle>
+        <Card.Subtitle> Price : {this.props.product.price} </Card.Subtitle>
+        <Card.Subtitle> Likes : {this.state.product.like} </Card.Subtitle> 
+        <Card.Subtitle> Quantity  : {this.state.product.quantity} </Card.Subtitle> 
+
+        <Button onClick={this.addLike} variant="primary"> Like</Button>
+        <Button onClick={()=>this.props.onBuy(this.state.product)} disabled={this.state.product.quantity === 0 ? true : false}  variant="primary"> Buy</Button>
+      </Card.Body>
+    </Card>
+    );
+  }
 }
  
-export default Product;*/
-import React , { useState ,useEffect }from "react";
-import {Alert, Button } from "react-bootstrap"; 
-const Product = (props) => {
-    const [showWelcomeMessage, setShowWelcomeMessage] = useState(false);
-    let img = require(`../assets/images/${props.image}`);
-    const [showAlert, setShowAlert] = useState(false);
 
-    const handleLike = () => {
-        // Code pour ajouter un "J'aime" à un produit spécifique
-      };
-      const handleBuy = () => {
-        setShowAlert(true);
-        setTimeout(() => setShowAlert(false), 2000);
-      };
-       
-    
-  return (
-    <div>
-         
-    <div >
-        <img src={img} alt={props.name}  style={{ width: "200px", height: "200px", objectFit: "cover" }}/>        
-        <h2>title:{props.title}</h2>
-        <p>Price: {props.price}</p>
-        <p>Description: {props.description}</p>  
-        <div style={{ display: "flex" }}> 
-        <Button variant="primary" onClick={handleLike}>
-        like
-      </Button>
-      <Button variant="primary" disabled={props.quantity === 0} onClick={handleBuy} style={{ backgroundColor: "skyblue", color: "white" }}>
-        buy
-      </Button>
-     
-      </div>
-       
-    </div>{showAlert && (
-        <Alert variant="success" onClose={() => setShowAlert(false)} dismissible>
-       you bought an item 
-        </Alert>
-      )}
-    </div>
-  );
-};
 
 export default Product;

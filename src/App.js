@@ -1,78 +1,79 @@
 // import logo from './logo.svg';
 import './App.css';
-import ComposantClass from './components/ComposantClass';
-import ComposantFunct from './components/ComposantFunct';
-import Products from './components/Products';
-import Products1 from './components/Products1';
-import FunctUseState from './component/hooks';
-const option = (
+import Products from "./Components/Products";
+import Product from "./Components/Product";
+import ProductDetails from './Components/ProductDetails';
+import {
+  BrowserRouter,
+  Routes, // instead of "Switch"
+  Route,
+} from "react-router-dom";
+//import { Route, Routes } from 'react-router-dom';
+import Home from "./Components/home"
+import NotFound from "./Components/NotFound"
+import NavigationBar from "./Components/NavigationBar/Navbar"
+const option=(
   <ol>
-    <li>Twin</li>
-    <li>Sae</li>
-    <li>bi</li>
+    <li>TWIN</li>
+    <li>BI</li>
+    <li>SAE</li>
   </ol>
 )
-
-let x ="Bonjour";
-var y="tout";
-const z="le monde !";
-const expression = <p> 1 + 1 = {1 + 1} </p>
-var nom = <h2> Yosra </h2>
-var prenom = <h2> Mekaoui </h2>
-const photo = <img src="logo192.png" alt="maphoto" width="100px" height="100px" />;
-
+let x="Bonjour" 
+var y="tout"
+const z="le monde"
+const  expression  =  <p>  1  +  1  =  {  1  +  1  }  </p>
+var nom="ghada"
+var prenom="ghada"
+var photo=<img src="logo192.png"></img>
 const user={
-  prenom: 'yosra',
-   nom: 'Mekaoui'
-  }
-  function formatName(user){
-    return user.prenom + '--' + user.nom;
-  }
-var myStyle ={
-  fontSize: 100,
-  color: '#ff0000'
+  username: "test",
+  lastname: "ghada"
 }
 
+function formatName(user){
+  return user.lastname+ "--- "+ user.lastname
+}
+
+/////c)Traitement conditionnel)))))))))))))
+function disBonjour(user){
+  if (user.lastname=='ghada'){
+    return <h1> Bonjour {formatName(user)}!</h1>
+  }
+  return <h1>Bonjour Inconnu</h1>
+}
+var myStyle={
+  fontsize: 100,
+  color: 'red'
+}
+function disBonjour2(user) {
+  return (user.prenom=='ghada') ? (<h1>Bonjour, {formatName(user)} !</h1>) :
+  (<h1>Bonjour Inconnu.</h1>);
+  }
+  //d)Manipulation des listes)))
+  const numbers = [7, 12, 25, 4, 5];
+const listItems = numbers.map((number, index) =>
+<li key={index}>{number}</li>);
+
+const max1 = numbers.reduce((a, b) => b > a ? b : a);
+// (Une autre façon de faire)
+const max = numbers.reduce((a, b) => Math.max(a, b));
+
+const tab = numbers.filter(v => v % 2 == 0).map((v,ind) =>
+<li key={ind}>{v * v}</li>);
 function App() {
   return (
- 
-    //<FunctUseState></FunctUseState>
-    
-    <Products1/>
-     /* { <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> 
-      { Hello Yosra
-      {option}
-      la valeur de x {x}
-      la valeur de y {y}
-      la valeur de z {z}
-      <br></br>
-      la valeur de l'expression {expression}
-      <br></br>
-      {nom} {prenom} {photo}
-      <br></br>
-      {user.nom} - {user.prenom}
-      <br>
-      </br>
-      {formatName(user)}
-      <h1 style = {myStyle}>Bonjour</h1> */
-  );
-      }
-      
+    <div className="App">
+    <NavigationBar />
+    <Routes>
+      <Route exact path="/" element={<Home/>} />
+      <Route exact path="/products" element={<Products/>} />
+      <Route path="*" element={<NotFound/>} />
+      <Route path="/products/:id" element={<ProductDetails />} />
+      </Routes>
+  </div>
 
-    
-  
+  );// fel router dom v6.8 ma3adech famma component = {} wallet element={<esmelKhra/>}
+}
 
 export default App;
